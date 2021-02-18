@@ -1,0 +1,59 @@
+{
+  "name": "skychallenge",
+  "version": "1.0.0",
+  "description": "challenge",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev:server": "./node_modules/.bin/ts-node-dev -r tsconfig-paths/register --inspect --poll --transpile-only --ignore-watch node_modules ./src/shared/infra/http/server.ts",
+    "start": "ts-node src\\shared\\infra\\http\\server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "dependencies": {
+    "@types/object-mapper": "^6.2.0",
+    "@types/supertest": "^2.0.10",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "object-mapper": "^6.2.0",
+    "reflect-metadata": "^0.1.13",
+    "supertest": "^6.1.3",
+    "ts-jest": "^26.5.1",
+    "tsyringe": "^4.4.0",
+    "typeorm": "^0.2.30",
+    "uuidv4": "^6.2.6"
+  },
+  "devDependencies": {
+    "@jest/types": "^26.6.2",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.5",
+    "yarn": "^1.22.10"
+  },
+  "optionalDependencies": {
+    "fsevents": "2.1.3"
+  }
+}

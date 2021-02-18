@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  #server:
+  #  build: .
+  #  container_name: nodejs
+  #  restart: always
+  #  stdin_open: true # without this node doesn't start
+  #  volumes:
+  #    - .:/home/node/app
+  #    - /home/node/app/node_modules
+  #  command: npm run dev:server
+  #  ports:
+  #    - "8080:8080"
+  #    - "9229:9229"
+  #  links:
+  #    - mongo
+
+  mongo:
+    image: mongo
+    container_name: mongoose
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
