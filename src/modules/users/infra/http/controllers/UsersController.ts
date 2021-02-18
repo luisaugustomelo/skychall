@@ -10,10 +10,12 @@ export default class UsersController {
         response: Response,
     ): Promise<Response> {
         try {
-            const { nome, email, senha, telefones } = request.body;
-            const name = nome;
-            const password = senha;
-            const phones = telefones;
+            const {
+                nome: name,
+                email,
+                senha: password,
+                telefones: phones,
+            } = request.body;
 
             const createUser = container.resolve(CreateUserService);
 
@@ -32,13 +34,13 @@ export default class UsersController {
 
     public async find(request: Request, response: Response): Promise<Response> {
         try {
-            const email = String(request.query.user_id);
+            const { user_id: email } = request.query;
             const { token, exp } = request.user;
 
             const findUser = container.resolve(FindUserService);
 
             const user = await findUser.execute({
-                email,
+                email: String(email),
                 token,
                 exp,
             });

@@ -9,8 +9,7 @@ export default class SessionsController {
         response: Response,
     ): Promise<Response> {
         try {
-            const { email, senha } = request.body;
-            const password = senha;
+            const { email, senha: password } = request.body;
 
             const autenticateUser = container.resolve(AuthenticateUserService);
 
